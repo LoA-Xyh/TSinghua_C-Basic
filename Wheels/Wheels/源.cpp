@@ -2,8 +2,12 @@
 using namespace std;
 
 int main() {
-	bool i= 3&5;
-	cout << i;
+	int sum = 0;
+
+	for (int i = 1; i != 10; i += 2)
+
+		sum += i;
+	cout << sum;
 	return 0;
 }
 
