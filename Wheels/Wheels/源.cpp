@@ -1,17 +1,25 @@
-#include <iostream>
+#include <iostream> 
 using namespace std;
 
-int main() {
-	char n[9];
-	cin >> n;
-	int num = 0;
-	for (int i = 0; i < 8; i++) {
-		if (n[i] != '\0')
-			num = n[i]+num*2;
-		else
-			break;
+bool symm(unsigned n) {
+	unsigned i = n;
+	unsigned m = 0;
+	while (i > 0) {
+		m = m * 10 + i % 10;
+		i /= 10;
 	}
-	cout <<num << endl;
-	return 0;
+	return m == n;
 }
 
+int main() {
+	/*
+	for (unsigned m=11;m,1000;m++)
+		if (symm(m)&&symm(m*m)&&symm(m*m*m)){
+			cout << "m= " << m ;
+			cout << " m*m= " << m*m;
+			cout << " m*m*m= " << m*m*m;
+		}
+	*/
+	symm(233);
+	return 0;
+}
