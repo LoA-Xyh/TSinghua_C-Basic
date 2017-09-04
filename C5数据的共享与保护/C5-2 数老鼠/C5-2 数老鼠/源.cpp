@@ -11,6 +11,9 @@ public:
 	Mouse(const Mouse&mouse) {
 		num += 1;
 	}
+	~Mouse(){
+		num -= 1;
+	}
 };
 int Mouse::num;
 void fn(Mouse m);
