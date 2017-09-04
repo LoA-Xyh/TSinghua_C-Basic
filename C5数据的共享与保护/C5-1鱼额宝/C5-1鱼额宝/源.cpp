@@ -1,14 +1,31 @@
 #include <iostream>
 using namespace std;
 
-class Yuebao ()
+class Yuebao
 {
-	static double profitRate;
+	static double staticRate ;
+	double balance = 0;
 public:
-	static void setProfitRate(double rate);
-	/* Your code here! */
+	Yuebao(double foreBalance) {
+		balance = foreBalance;
+	}
+	static void setProfitRate(double rate) {
+		staticRate = rate;
+	}
+	void addProfit(){
+		balance += balance*staticRate;
+	}
+	void deposit(double amount) {
+		balance += amount;
+	}
+	void withdraw(double amount) {
+		balance -= amount;
+	}
+	double getBalance() {
+		return balance;
+	}
 };
-
+double Yuebao::staticRate = 0;
 int main()
 {
 	int n;
